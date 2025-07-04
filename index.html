@@ -1,0 +1,2368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movies World – Trailers</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <!-- Swiper.js CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+
+
+
+<style>
+  /* 🌌 Animated Dark Background Theme */
+  body {
+    background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+    background-size: 800% 800%;
+    animation: gradientBG 20s ease infinite;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    background-attachment: fixed;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* 🌟 NAVBAR */
+  .glowing-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #00eaff !important;
+  text-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00ffff;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  letter-spacing: 1px;
+  animation: glow-pulse 2.5s infinite ease-in-out;
+}
+
+.glowing-brand:hover {
+  color: #ffffff !important;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #00eaff,
+    0 0 30px #00eaff;
+  transform: scale(1.05);
+}
+
+@keyframes glow-pulse {
+  0% {
+    text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00ffff;
+  }
+  50% {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #00eaff, 0 0 40px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00ffff;
+  }
+}
+
+  .navbar {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .custom-navbar {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #444;
+  }
+
+  .navbar-brand {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: 0.4s ease;
+  }
+
+  .navbar-brand:hover {
+    color: #3399ff !important;
+    text-shadow: 0 0 20px #3399ff;
+  }
+
+  .custom-link {
+    color: #fff !important;
+    position: relative;
+    transition: 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .custom-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #3399ff;
+    box-shadow: 0 0 10px #3399ff;
+    transition: 0.4s ease;
+  }
+
+  .custom-link:hover {
+    color: #3399ff !important;
+    text-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff;
+    transform: scale(1.05);
+  }
+
+  .custom-link:hover::after {
+    width: 100%;
+  }
+
+  .dropdown-menu .dropdown-item {
+    transition: 0.3s ease;
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #3399ff;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+  }
+
+  /* Wrapper for relative position */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Hidden by default */
+.search-bar.collapse-input {
+  width: 0;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.3s ease;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+  border-radius: 30px;
+  padding-left: 15px;
+  padding-right: 40px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* When active */
+.search-bar.expand {
+  width: 250px;
+  opacity: 1;
+}
+
+/* Hover effect on search button */
+#searchToggle:hover {
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  border-color: #0ff;
+}
+
+  
+.trailer-heading-glow {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.glow-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  color: #ff0000;
+  text-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    0 0 40px #00ffff,
+    0 0 80px #00ffff;
+  transition: transform 0.4s ease;
+}
+
+.glow-title:hover {
+  transform: scale(1.05);
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #0ff,
+    0 0 30px #0ff;
+}
+
+.glow-subtitle {
+  color: #d1ecff;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px rgba(0,255,255,0.6);
+  font-weight: 400;
+  transition: transform 0.3s;
+}
+
+.glow-subtitle:hover {
+  transform: scale(1.03);
+  text-shadow: 0 0 15px #ffffffaa;
+}
+
+/* Entry animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.trailerSwiper {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Reduce the height by changing the aspect ratio */
+.ratio.ratio-16x9 {
+  aspect-ratio: 16 / 6.5 !important; /* shorter height */
+}
+
+/* Swiper slide base */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  filter: brightness(0.9);
+}
+
+/* Entry animation when it becomes active */
+.swiper-slide-active {
+  animation: fadeInZoom 1s ease forwards;
+  filter: brightness(1);
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover animation */
+.swiper-slide:hover {
+  transform: scale(1.03) rotateZ(1deg);
+  filter: brightness(1.1);
+}
+
+/* Video style */
+.video-carousel {
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.2);
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Swiper buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
+  transition: 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  box-shadow: 0 0 25px #0ff, 0 0 40px #0ff;
+  transform: scale(1.1) rotate(5deg);
+}
+@media (max-width: 768px) {
+  .ratio.ratio-16x9 {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 10px;
+  }
+}
+
+
+
+  /* ✨ Latest Movies Heading */
+  .latest-heading {
+    font-size: 2.5rem;
+    color: #00eaff;
+    text-shadow: 0 0 10px #3e4242, 0 0 20px #8a9091, 0 0 40px #b5bcbd;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+  }
+
+  .latest-heading:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px #ff0000, 0 0 30px #3cffff;
+  }
+  .movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #111;
+  position: relative;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff4d;
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 🎬 Overlay Style */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 30, 0.75);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(4px);
+}
+
+.movie-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h5 {
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.card-overlay .btn {
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 10px #00eaff44;
+}
+
+.card-overlay .btn:hover {
+  background-color: #00eaff;
+  color: #000;
+  box-shadow: 0 0 20px #00eaffaa;
+}
+
+.action-heading {
+    color: #ff4c4c;
+    text-shadow: 0 0 10px #ff4c4c66, 0 0 20px #ff4c4c99;
+    transition: 0.4s ease;
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  .action-heading:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #ff1e1e, 0 0 40px #ff1e1e, 0 0 60px #ff1e1e;
+    transform: scale(1.05);
+  }
+
+  .action-heading::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 12px auto 0;
+    background: #ff1e1e;
+    box-shadow: 0 0 10px #ff1e1e, 0 0 20px #ff1e1e;
+    border-radius: 10px;
+    transition: 0.4s ease;
+  }
+
+  .action-heading:hover::after {
+    width: 120px;
+    box-shadow: 0 0 20px #ff1e1e, 0 0 40px #ff1e1e;
+  }
+
+<!-- 💥 Card Styling 
+  .action-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #111;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .action-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .action-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px #ff1e1e88, 0 0 50px #ff1e1e55;
+  }
+
+  .action-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(15, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(3px);
+  }
+
+  .action-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .card-overlay h5 {
+    color: #ff1e1e;
+    text-shadow: 0 0 10px #ff1e1eaa;
+  }
+
+  .card-overlay .btn {
+    border-radius: 30px;
+    padding: 6px 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 8px #ff1e1e88;
+  }
+
+  .card-overlay .btn:hover {
+    background-color: #ff1e1e;
+    color: #fff;
+    box-shadow: 0 0 20px #ff1e1e, 0 0 30px #ff1e1e;
+  }
+.movie-heading {
+  font-size: 2.5rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #3e4242, 0 0 20px #8a9091, 0 0 40px #b5bcbd;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.movie-heading:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px #ff0000, 0 0 30px #3cffff;
+}
+
+.latest-heading {
+  font-size: 2.5rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #3e4242, 0 0 20px #8a9091, 0 0 40px #b5bcbd;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.latest-heading:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px #ff0000, 0 0 30px #3cffff;
+}
+/* Container behaves inline-flex */
+.search-container {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+/* Hidden state */
+.search-bar.collapsed-input {
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.4s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Shown when expanded */
+.search-bar.expand {
+  width: 200px;
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 20px;
+  border: 1px solid #0ff;
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* Glow on search icon hover */
+#searchToggle:hover {
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  border-color: #0ff;
+}
+
+.latest-heading {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+.latest-heading {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+}
+.latest-heading {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
+}
+.latest-heading {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+  /* Footer-specific styles */
+  .hover-glow {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .hover-glow:hover {
+    color: #00eaff !important;
+    text-shadow: 0 0 8px #00eaff;
+    transform: translateX(5px);
+  }
+  
+  .hover-glow::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #00eaff;
+    transition: width 0.3s ease;
+  }
+  
+  .hover-glow:hover::after {
+    width: 100%;
+  }
+  
+  .social-icons a {
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .social-icons a:hover {
+    color: #00eaff !important;
+    transform: translateY(-3px) scale(1.1);
+    text-shadow: 0 0 10px #00eaff;
+  }
+  
+  footer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,234,255,0.1) 0%, transparent 70%);
+    animation: float 15s infinite linear;
+    z-index: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(5%, 5%);
+    }
+    50% {
+      transform: translate(10%, 0);
+    }
+    75% {
+      transform: translate(5%, -5%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  /* Disney+ Hotstar Style Carousel */
+.disney-carousel {
+  padding: 30px 0 50px;
+}
+
+.carousel-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  height: 400px;
+  transform: scale(0.9);
+}
+
+.swiper-slide-active .carousel-card {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(0, 234, 255, 0.7);
+}
+
+.video-carousel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.carousel-card:hover .video-carousel {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+  z-index: 1;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 2;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.swiper-slide-active .card-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-content h3 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-play, .btn-info {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-play {
+  background: #00eaff;
+  color: #000;
+}
+
+.btn-play:hover {
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+.btn-info {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.btn-info:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background: rgba(0, 234, 255, 0.7);
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 12px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00eaff;
+  transform: scale(1.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-card {
+    height: 300px;
+  }
+  
+  .card-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-play, .btn-info {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+  
+</style>
+
+  
+
+</head>
+
+<body>
+
+ <!-- ✅ NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar" style="
+  background-color: rgba(15, 15, 30, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <div class="container-fluid">
+  <a class="navbar-brand fw-bold fs-4 glowing-brand" href="#">🎬 MoviesWorld</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon text-light"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav mb-2 mb-lg-0 gap-3 align-items-center">
+        <li class="nav-item"><a class="nav-link custom-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link custom-link" href="#">Upcoming</a></li>
+        <li class="nav-item"><a class="nav-link custom-link" href="#">New Releases</a></li>
+
+      <!-- ✅ Movies Dropdown -->
+<li class="nav-item dropdown aos-animate" data-aos="fade-down" data-aos-duration="500">
+  <a class="nav-link dropdown-toggle custom-link" href="#" role="button" data-bs-toggle="dropdown">Movies</a>
+  <ul class="dropdown-menu bg-dark border-0 shadow">
+    <li><a class="dropdown-item text-light" href="#action-section">Action</a></li>
+    <li><a class="dropdown-item text-light" href="#comedy-section">Comedy</a></li>
+    <li><a class="dropdown-item text-light" href="#drama-section">Drama</a></li>
+    <li><a class="dropdown-item text-light" href="#scifi-section">Sci-Fi</a></li>
+    <li><a class="dropdown-item text-light" href="#horror-section">Horror</a></li>
+    <li><a class="dropdown-item text-light" href="#romance-section">Romance</a></li>
+    <li><a class="dropdown-item text-light" href="#thriller-section">Thriller</a></li>
+    <li><a class="dropdown-item text-light" href="#webseries-section">Web Series</a></li>
+  </ul>
+</li>
+
+
+<!-- ✅ Functional Search Bar (with working search) -->
+<li class="nav-item d-flex align-items-center search-container">
+  <form class="d-flex align-items-center gap-2" id="searchForm">
+    <button id="searchToggle" class="btn btn-outline-light" type="button">
+      <i class="fas fa-search"></i>
+    </button>
+    <input
+      id="searchInput"
+      type="search"
+      class="form-control search-bar collapsed-input"
+      placeholder="Search Movies"
+      aria-label="Search"
+      name="query"
+    />
+  </form>
+</li>
+
+
+</ul>
+
+</nav>
+
+
+  <!-- 🎬 Glowing Trailer Section Heading -->
+<div class="text-center trailer-heading-glow py-5" data-aos="flip-up">
+  <h2 class="glow-title">🔥 Watch Latest Movie Trailers</h2>
+  <p class="lead glow-subtitle">Experience the thrill in Full HD – right here!</p>
+</div>
+
+
+<div class="container-fluid px-0 mb-5" data-aos="zoom-in-up">
+  <div class="swiper disney-carousel">
+    <div class="swiper-wrapper">
+
+      <!-- Trailer 1 -->
+      <div class="swiper-slide">
+        <div class="carousel-card">
+          <div class="card-overlay"></div>
+          <video class="video-carousel" autoplay muted loop playsinline>
+            <source src="video/trailer1.mp4" type="video/mp4" />
+          </video>
+          <div class="card-content">
+            <h3>Black Panther</h3>
+            <div class="buttons">
+              <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+              <button class="btn-info"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trailer 2 -->
+      <div class="swiper-slide">
+        <div class="carousel-card">
+          <div class="card-overlay"></div>
+          <video class="video-carousel" autoplay muted loop playsinline>
+            <source src="video/trailer3.mp4" type="video/mp4" />
+          </video>
+          <div class="card-content">
+            <h3>Avengers: Endgame</h3>
+            <div class="buttons">
+              <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+              <button class="btn-info"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trailer 3 -->
+      <div class="swiper-slide">
+        <div class="carousel-card">
+          <div class="card-overlay"></div>
+          <video class="video-carousel" autoplay muted loop playsinline>
+            <source src="video/trailer4.mp4" type="video/mp4" />
+          </video>
+          <div class="card-content">
+            <h3>Spider-Man: No Way Home</h3>
+            <div class="buttons">
+              <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+              <button class="btn-info"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+
+  <!-- 🔥 Latest Movies Heading -->
+<div class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">✨ Latest Movies</h2>
+  <p class="text-light">Catch the newest blockbusters, fresh uploads & trending releases!</p>
+</div>
+
+<!-- 🎬 Movie Cards Section -->
+<div class="container py-3">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🎞️ Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/1.jpg" class="card-img-top" alt="Movie Poster">
+
+        <!-- 🔵 Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Black Panther</h5>
+          <a href="https://example.com/black-panther" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/2.jpg" class="card-img-top" alt="Movie Poster">
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Kalki</h5>
+          <a href="https://example.com/kalki" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/3.jpg" class="card-img-top" alt="Movie Poster">
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Kalki</h5>
+          <a href="https://example.com/kalki" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+    <!-- 🎞️ Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/1.jpg" class="card-img-top" alt="Movie Poster">
+
+        <!-- 🔵 Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Black Panther</h5>
+          <a href="https://example.com/black-panther" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/2.jpg" class="card-img-top" alt="Movie Poster">
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Kalki</h5>
+          <a href="https://example.com/kalki" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/3.jpg" class="card-img-top" alt="Movie Poster">
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Kalki</h5>
+          <a href="https://example.com/kalki" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/1.jpg" class="card-img-top" alt="Movie Poster">
+
+        <!-- 🔵 Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Kalki</h5>
+          <a href="https://example.com/kalki" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/2.jpg" class="card-img-top" alt="Movie Poster">
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Oppenheimer</h5>
+          <a href="https://example.com/oppenheimer" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎞️ Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card movie-card position-relative overflow-hidden">
+        <img src="movie poster/3.jpg" class="card-img-top" alt="Movie Poster">
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Inception</h5>
+          <a href="https://example.com/inception" target="_blank" class="btn btn-outline-info">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div id="action-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">🔥 Action Movies</h2>
+  <p class="text-light">Unleash the thrill with explosive action-packed adventures!</p>
+</div>
+
+
+  <!-- 🎞️ Action Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+<!-- 😂 Comedy Movies Section Heading -->
+<div id="comedy-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">😂 Comedy Movies</h2>
+  <p class="text-light">Laugh out loud with these hilarious picks!</p>
+</div>
+
+   <!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+<!-- 🎭 Drama Movies Section Heading -->
+<div id="drama-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">🎭 Drama Movies</h2>
+  <p class="text-light">Feel the emotion with powerful drama narratives!</p>
+</div>
+
+
+    <!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+<!-- 🧬 Sci-Fi Movies Section Heading -->
+<div id="scifi-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">🚀 Sci-Fi Movies</h2>
+  <p class="text-light">Explore futuristic worlds and mind-bending science!</p>
+</div>
+
+  <!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+  
+</div>
+
+<!-- 🩸 Horror Movies Section Heading -->
+<div id="horror-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">👻 Horror Movies</h2>
+  <p class="text-light">Dive into the darkness with spine-chilling tales!</p>
+</div>
+ <!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+  
+</div>
+
+<!-- 💖 Romance Movies Section Heading -->
+<div id="romance-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">💖 Romance Movies</h2>
+  <p class="text-light">Feel the love through heartwarming stories and connections!</p>
+</div>
+<!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+  
+</div>
+
+<!-- 🔪 Thriller Movies Section Heading -->
+<div id="thriller-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">🔪 Thriller Movies</h2>
+  <p class="text-light">Uncover mysteries and experience edge-of-the-seat suspense!</p>
+</div>
+
+<!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+  
+</div>
+
+<!-- 📺 Web Series Section Heading -->
+<div id="webseries-section" class="text-center my-5" data-aos="fade-up">
+  <h2 class="latest-heading">📺 Web Series</h2>
+  <p class="text-light">Binge-worthy stories that keep you hooked episode after episode!</p>
+</div>
+
+
+<!-- 🎞️ Comedy Movie Cards Section -->
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Comedy Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Comedy Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Comedy Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🔥 Action Movie Card 1 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/10.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <!-- Overlay -->
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Mission: Impossible</h5>
+          <a href="https://example.com/mission-impossible" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 2 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/11.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">John Wick</h5>
+          <a href="https://example.com/john-wick" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 Action Movie Card 3 -->
+    <div class="col-md-4 col-sm-6 col-10" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card action-card position-relative overflow-hidden">
+        <img src="movie poster/12.jpg" class="card-img-top" alt="Action Movie Poster">
+
+        <div class="card-overlay d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="text-white fw-bold mb-3">Extraction 2</h5>
+          <a href="https://example.com/extraction2" target="_blank" class="btn btn-outline-danger">Watch Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+  
+</div>
+
+<!-- 🌟 Footer Section -->
+<footer class="bg-dark text-white pt-5 pb-4" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);">
+  <div class="container">
+    <div class="row g-4">
+      
+      <!-- 🎬 About Section -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="footer-brand d-flex align-items-center mb-3">
+          <span class="glowing-brand fs-3">🎬 MoviesWorld</span>
+        </div>
+        <p class="text-muted"><span style="color: whitesmoke;">Your ultimate destination for the latest movies, trailers, and entertainment news. Watch, explore, and enjoy!</span></p>
+        <div class="social-icons mt-4">
+          <a href="#" class="text-white me-3" style="font-size: 1.5rem;"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-3" style="font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3" style="font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white" style="font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- 🚀 Quick Links -->
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <h5 class="text-uppercase fw-bold mb-4" style="color: #00eaff;">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-glow">Home</a></li>
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-glow">New Releases</a></li>
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-glow">Trending</a></li>
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-glow">Upcoming</a></li>
+          <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-glow">Web Series</a></li>
+        </ul>
+      </div>
+
+      <!-- 🎭 Genres -->
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <h5 class="text-uppercase fw-bold mb-4" style="color: #00eaff;">Genres</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#action-section" class="text-white text-decoration-none hover-glow">Action</a></li>
+          <li class="mb-2"><a href="#comedy-section" class="text-white text-decoration-none hover-glow">Comedy</a></li>
+          <li class="mb-2"><a href="#drama-section" class="text-white text-decoration-none hover-glow">Drama</a></li>
+          <li class="mb-2"><a href="#scifi-section" class="text-white text-decoration-none hover-glow">Sci-Fi</a></li>
+          <li class="mb-2"><a href="#horror-section" class="text-white text-decoration-none hover-glow">Horror</a></li>
+        </ul>
+      </div>
+
+      <!-- 📧 Newsletter -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <h5 class="text-uppercase fw-bold mb-4" style="color: #00eaff;">Newsletter</h5>
+        <p class="text-muted"><span style="color: whitesmoke;">Subscribe to get updates on new releases and exclusive content.</span></p>
+        <form class="mt-4">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Your Email" aria-label="Your Email">
+            <button class="btn btn-primary" type="button" style="background: #00eaff; border-color: #00eaff;">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+    
+    <!-- © Copyright -->
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="mb-0">&copy; 2025 MoviesWorld. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="text-white text-decoration-none me-3 hover-glow">Privacy Policy</a>
+        <a href="#" class="text-white text-decoration-none me-3 hover-glow">Terms of Service</a>
+        <a href="#" class="text-white text-decoration-none hover-glow">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+  <!-- ✅ JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <a href="#" class="btn btn-info position-fixed bottom-0 end-0 m-4 shadow" style="z-index:999;">
+  <i class="fas fa-arrow-up"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".trailerSwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: "auto",
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 250,
+      modifier: 1,
+      slideShadows: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<script>
+  const searchToggle = document.getElementById('searchToggle');
+  const searchInput = document.getElementById('searchInput');
+  const searchForm = document.getElementById('searchForm');
+
+  // Toggle textbox visibility
+  searchToggle.addEventListener('click', () => {
+    searchInput.classList.toggle('expand');
+    if (searchInput.classList.contains('expand')) {
+      searchInput.focus();
+    }
+  });
+
+  // Handle search submit
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = searchInput.value.trim();
+
+    if (query !== '') {
+      // ✅ You can redirect or filter here
+      alert('Searching for: ' + query); // replace this with real logic
+
+      // Example: Redirect to a search page
+      // window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+    }
+  });
+
+  // Close input on outside click
+  document.addEventListener('click', (e) => {
+    if (!searchForm.contains(e.target)) {
+      searchInput.classList.remove('expand');
+    }
+  });
+</script>
+<script>
+// Initialize Disney Style Carousel
+var disneySwiper = new Swiper(".disney-carousel", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2,
+    slideShadows: false,
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
